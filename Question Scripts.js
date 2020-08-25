@@ -41,18 +41,28 @@ const homeS = "You need help finding a home";       //If they need help finding 
 
 
 suggestionsList[0] = idS; suggestionsList[1] = firstIDS; suggestionsList[2] = welfareS; suggestionsList[3] = addictionS; suggestionsList[4] = mentalS; suggestionsList[5] = diagnoseS; suggestionsList[6] = jobS; suggestionsList[7] = homeS;
-
+const suggestionOutput = document.getElementById("suggestions");     //The HTML element that will ouptut suggestions
 
 
 
 //Calculates which strings should be added
 
-var helpSelected = document.getElementsByClassName("help");         //All radio options that indicate some help is needed
-var suggestions = "";           //String that stores the suggestions
+var helpSelection = document.getElementsByClassName("help");         //All radio options that indicate some help is needed
+var suggestions;           //String that stores the suggestions
 
 function getSuggestions(){
-    for(let i = 0; i < helpSelected.length; i++){
-        if(helpSelected[i].checked)
-            alert(suggestionsList[i]);
+    suggestions = "";
+    let numSuggestions = 0;     //number of suggestions given
+
+    for(let i = 0; i < suggestionsList.length; i++){
+        if(helpSelection[i].checked){
+            addsuggestion(suggestionsList[i], numSuggestions++);
+        }
     }
+
+    suggestionOutput.innerHTML = suggestions;
+}
+
+function addsuggestion(string, num){
+    suggestions += "<p>" + num + ". " + string + "</p>";
 }
