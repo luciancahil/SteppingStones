@@ -30,14 +30,44 @@ function makeInvsible(){
 //Stores the Strings that make up the suggestions
 var suggestionsList = [];                             //stores the suggestions
 
-const idS = "You need help with id";                //if they need help with id
-const firstIDS = "You need one piece of ID";        //if they need help getting their first piece of id
-const welfareS = "You need welfare";                //if they need help applying for welfare
+const idS = "If you want help with getting ID, the best place to go for help is Chimo."                 //if they need help with id
+            + " They are on the first floor of Richmond Caring place, located at 7000 Minoru Boulevard."
+            + " Open from 9 am to 4:30 pm on weekdays. You will need to bring at least one piece of ID";
+
+const firstIDS = "However, since you don't have the first piece of ID, you will need to "   //if they need help getting their first piece of id
+                + "get one piece before Chimo can help. Fortuneately, you can do that "
+                + "relatively easily by asking for a copy of your birth certificate. "
+                + "Go the BC website <a href = \"https://www2.gov.bc.ca/gov/content/life-events/order-certificates-copies#order_online\"> for"
+                + " ordering birth certificates </a>"
+                + ", select \"Order a Birth, Marriage or Death Certificate\", and then fill out the online form."
+                + " your certificate will soon be mailed to you. "
+                + " If you do not have a mailing adress, you can have your mail delivered to the "
+                + "<a href = \"https://salvationarmyrichmond.org/?page_id=73\">Richmond House Emergency Shelter</a> to pick up.";    
+                
+                
+const welfareS = "If you want help with getting ID, the best place to go for help is Chimo."                                                    //if they need help applying for welfare
+                + " They are on the first floor of Richmond Caring place, located at 7000 Minoru Boulevard."
+                + " Open from 9 am to 4:30 pm on weekdays. You will need to bring ID";     
+                
+
 const addictionS = "You need addictions help";      //if they need addictions help
 const mentalS = "You need mentla help";             //if they need mental help
-const diagnoseS = "You need an official diagnosis"; //If they don't have an offical diagnosis yet
-const jobS = "You need help finding a job";         //If they need help finding a job
+
+
+const diagnoseS = "In order to get formal psychiatric help,"          //If they don't have an offical diagnosis yet
+                    + " you need a formal diagnosis. The easiest way"
+                    + " to get a diagnosis is to speak with <a href = \"https://www.ratemds.com/facilities/bc/richmond/\">a general"
+                    + " practitioner or family doctor</a>, such as ones at"
+                    + " <a href = \"https://stevestonmedicalgroup.wordpress.com/\">Steveston<\a> or <a href = \"http://www.terranovamedical.ca/\"> terra nova</a>. Many doctors can provide"
+                    + " a diagnosis after a simple phone appointment."; 
+
+const jobS = "If you wish to help find a job, the best place to go is WorkBC."          //If they need help finding a job
+               + " To get startted, call either the Granville branch (778-732- 1529)"
+               " or the ironwood branch(778-732-4718). They will ask for basic information in the intial call."
+               " You will then be matched with a counsellor who can help you with resume building,"
+               " skills building, interviewing skills, and applying for wage subsidies.";         
 const homeS = "You need help finding a home";       //If they need help finding a home
+
 
 
 suggestionsList[0] = idS; suggestionsList[1] = firstIDS; suggestionsList[2] = welfareS; suggestionsList[3] = addictionS; suggestionsList[4] = mentalS; suggestionsList[5] = diagnoseS; suggestionsList[6] = jobS; suggestionsList[7] = homeS;
@@ -54,15 +84,23 @@ function getSuggestions(){
     suggestions = "";
     let numSuggestions = 0;     //number of suggestions given
 
+    findAddictionSelection();
+
     for(let i = 0; i < suggestionsList.length; i++){
         if(helpSelection[i].checked){
-            addsuggestion(suggestionsList[i], numSuggestions++);
+            addsuggestion(suggestionsList[i], ++numSuggestions);
         }
     }
 
     suggestionOutput.innerHTML = suggestions;
 }
 
+function findAddictionSelection(){
+
+}
+
 function addsuggestion(string, num){
     suggestions += "<p>" + num + ". " + string + "</p>";
 }
+
+//TODO add better suggestions, and then add a download option
