@@ -9,10 +9,17 @@
     <div id = "Questions">
         <h1>The Stepping Stones Questions</h1>
         <br>
+        
+        <h2>Are you 19 or older?</h2>
+        <label><input type = "radio" name = "age" id = "above19" checked>Yes</label>
+        <label><input type = "radio" name = "age" id = "below19">No</label><br>
+        <br>
+
         <h2>Would you like help applying for ID?</h2>
         <label><input type = "radio" name = "ID" id = "IDYes" class = "Appear help">Yes</label>
         <label><input type = "radio" name = "ID" id = "IDNo" class = "Disappear">No</label><br>
         <br>
+
         <div id = "OnePieceID" class = "hidden followup">
             <h2>Do you have at least one piece of ID?</h2>
             <label><input type = "radio" name = "oneID" id = "oneIDYes">Yes</label>
@@ -47,9 +54,11 @@
         <label><input type = "radio" name = "job" id = "diagnosedYes" class = "help">Yes</label>
         <label><input type = "radio" name = "job" id = "diagnosedNo">No</label><br>
 
+        <!--
         <h2>Would you like help finding a place to stay?</h2>
         <label><input type = "radio" name = "home" id = "homeYes" class = "help">Yes</label>
         <label><input type = "radio" name = "home" id = "homeNo">No</label><br>
+        -->
     </div>
     <br>
     <button id = "getSuggestions" onclick="getSuggestions()">Submit</button>

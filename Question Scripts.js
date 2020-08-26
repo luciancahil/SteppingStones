@@ -79,11 +79,14 @@ const suggestionOutput = document.getElementById("suggestions");     //The HTML 
 
 var helpSelection = document.getElementsByClassName("help");         //All radio options that indicate some help is needed
 var suggestions;           //String that stores the suggestions
+var above19;                //boolean that stores if the person is older than 19
 
 function getSuggestions(){
     suggestions = "";
     let numSuggestions = 0;     //number of suggestions given
+    above19 = document.getElementById("above19").checked;
 
+    alert(above19);
     findAddictionSelection();
 
     for(let i = 0; i < suggestionsList.length; i++){
