@@ -48,7 +48,27 @@ const firstIDS = "However, since you don't have the first piece of ID, you will 
 const welfareS = "If you want help with getting ID, the best place to go for help is Chimo."                                                    //if they need help applying for welfare
                 + " They are on the first floor of Richmond Caring place, located at 7000 Minoru Boulevard."
                 + " Open from 9 am to 4:30 pm on weekdays. You will need to bring ID";     
-                
+    
+
+//The addiction suggestion based on their circumstances
+var addictionOptions = [];
+addictionOptions[0] =   "The best option for an adult addicted to non-opiods is to call the "  //over 19, not addicted to opiods
+                        + " substance abuse intake (604 244 5488). Explain what you"
+                        + " are struggling with, and they will be able to set up appointment with"
+                        + " a suitable professional.";
+
+addictionOptions[1] =  "The best place to find help with opiod addiction is"       //over 19, addicted to opiods
+                        + " <a href = \"http://www.vch.ca/Locations-Services/result?res_id=1143\"> Ann Vogel </a>."
+                        + " The suggested first action is to call their main line (604-675-3975), "
+                        + " and a specialist will help find you find a suitable professional.";
+
+
+addictionOptions[2] =   "Since you are a minor, the best place for you to find"         //under 19
+                    + " help for substance abuse would be with "
+                    + " <a href = \"https://www.richmondaddictions.ca/\"> RASS </a>."
+                    + " The suggested first action is to call their intake (604-270-9220), "
+                    + " and a specialist will help find you find a suitable professional.";
+
 
 const addictionS = "You need addictions help";      //if they need addictions help
 const mentalS = "You need mentla help";             //if they need mental help
@@ -70,7 +90,7 @@ const homeS = "You need help finding a home";       //If they need help finding 
 
 
 
-suggestionsList[0] = idS; suggestionsList[1] = firstIDS; suggestionsList[2] = welfareS; suggestionsList[3] = addictionS; suggestionsList[4] = mentalS; suggestionsList[5] = diagnoseS; suggestionsList[6] = jobS; suggestionsList[7] = homeS;
+suggestionsList[0] = idS; suggestionsList[1] = firstIDS; suggestionsList[2] = welfareS; suggestionsList[4] = mentalS; suggestionsList[5] = diagnoseS; suggestionsList[6] = jobS; //suggestionsList[7] = homeS;
 const suggestionOutput = document.getElementById("suggestions");     //The HTML element that will ouptut suggestions
 
 
@@ -86,7 +106,7 @@ function getSuggestions(){
     let numSuggestions = 0;     //number of suggestions given
     above19 = document.getElementById("above19").checked;
 
-    alert(above19);
+    
     findAddictionSelection();
 
     for(let i = 0; i < suggestionsList.length; i++){
@@ -99,7 +119,19 @@ function getSuggestions(){
 }
 
 function findAddictionSelection(){
+    let opiodRadio = document.getElementById("opiodYes");
 
+    if(above19){
+        if(opiodRadio.checked){
+            suggestionsList[3] = addictionOptions[1];
+        }else{
+            suggestionsList[3] = addictionOptions[0];
+        }
+    }else{
+        suggestionsList[3] = addictionOptions[2];
+    }
+
+``
 }
 
 function addsuggestion(string, num){
