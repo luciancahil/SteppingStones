@@ -175,23 +175,15 @@ function findmentalSelection(){
 }
 
 function findHousingSolution(){
-    if(document.getElementById("young").checked){
-        suggestionsList[7] = housingOptions[0];
-        return;
-    }
+    let index = 0;
+    let housingChecks = document.getElementsByClassName("housing");     //all the checkboxes in the housing followup
 
-    if(document.getElementById("incapable").checked){
-        suggestionsList[7] = housingOptions[1]
-        return;
-    }
-
-    if(document.getElementById("under58").checked){
-        suggestionsList[7] = housingOptions[2]
-        return;
+    while(index < housingChecks.length && !housingChecks[index].checked){
+        index++;
     }
 
     //independant, too rich
-    suggestionsList[7] = housingOptions[3];
+    suggestionsList[7] = housingOptions[index];
 }
 
 function addsuggestion(string, num){
