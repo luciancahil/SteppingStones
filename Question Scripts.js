@@ -24,29 +24,28 @@ function makeInvsible(){
     hiddenQsList[index].classList.add("hidden");
 }
 
-
 //The following is used to calculate what services are appropriate
 
 //Stores the Strings that make up the suggestions
 var suggestionsList = [];                             //stores the suggestions
 
 const idS = "If you want help with getting ID, the best place to go for help is "                 //if they need help with id
-            + " <a href = \"http://www.chimoservices.com/\">"
+            + " <a target=\"_blank\" href = \"http://www.chimoservices.com/\">"
             + " Chimo.</a> They are on the first floor of Richmond Caring place, located at 7000 Minoru Boulevard."
             + " Open from 9 am to 4:30 pm on weekdays. You will need to bring at least one piece of ID";
 
 const firstIDS = "However, since you don't have the first piece of ID, you will need to "   //if they need help getting their first piece of id
                 + "get one piece before Chimo can help. Fortuneately, you can do that "
                 + "relatively easily by asking for a copy of your birth certificate. "
-                + "Go the BC website <a href = \"https://www2.gov.bc.ca/gov/content/life-events/order-certificates-copies#order_online\"> for"
+                + "Go the BC website <a target=\"_blank\" href = \"https://www2.gov.bc.ca/gov/content/life-events/order-certificates-copies#order_online\"> for"
                 + " ordering birth certificates </a>"
                 + ", select \"Order a Birth, Marriage or Death Certificate\", and then fill out the online form."
                 + " your certificate will soon be mailed to you. "
                 + " If you do not have a mailing adress, you can have your mail delivered to the "
-                + "<a href = \"https://salvationarmyrichmond.org/?page_id=73\">Richmond House Emergency Shelter</a> to pick up.";    
+                + "<a target=\"_blank\" href = \"https://salvationarmyrichmond.org/?page_id=73\">Richmond House Emergency Shelter</a> to pick up.";    
                 
                 
-const welfareS = "If you want help with getting ID, the best place to go for help is <a href = \"http://www.chimoservices.com/\">"                                                    //if they need help applying for welfare
+const welfareS = "If you want help with getting ID, the best place to go for help is <a target=\"_blank\" href = \"http://www.chimoservices.com/\">"                                                    //if they need help applying for welfare
                 + " Chimo.</a> They are on the first floor of Richmond Caring place, located at 7000 Minoru Boulevard."
                 + " Open from 9 am to 4:30 pm on weekdays. You will need to bring ID";     
     
@@ -59,14 +58,14 @@ addictionOptions[0] =   "The best option for an adult addicted to non-opiods is 
                         + " a suitable professional.";
 
 addictionOptions[1] =  "The best place to find help with opiod addiction is"       //over 19, addicted to opiods
-                        + " <a href = \"http://www.vch.ca/Locations-Services/result?res_id=1143\"> Ann Vogel </a>."
+                        + " <a target=\"_blank\" href = \"http://www.vch.ca/Locations-Services/result?res_id=1143\"> Ann Vogel </a>."
                         + " The suggested first action is to call their main line (604-675-3975), "
                         + " and a specialist will help find you find a suitable professional.";
 
 
 addictionOptions[2] =   "Since you are a minor, the best place for you to find"         //under 19
                     + " help for substance abuse would be with "
-                    + " <a href = \"https://www.richmondaddictions.ca/\"> RASS </a>."
+                    + " <a target=\"_blank\" href = \"https://www.richmondaddictions.ca/\"> RASS </a>."
                     + " The suggested first action is to call their intake (604-270-9220), "
                     + " and a specialist will help find you find a suitable professional.";
 
@@ -77,14 +76,14 @@ var mentalOptions = [];
 
 //Over 19
 mentalOptions[0] = "Since you are over 18, the best place is to go is the "
-                    + " <a href =\"http://www.vch.ca/Locations-Services/result?res_id=1062\">"
+                    + " <a target=\"_blank\" href =\"http://www.vch.ca/Locations-Services/result?res_id=1062\">"
                     + "Richmond Adult Mental Health Team </a>. They can provide community based assessment" 
                     + " and treatment, as well as case management, outreach and rehabilitation programs."
                     + " Do note that they require a refferal form to be filled out by a"
                     + " midwife, physician or nurse practitioner. The form can be downloaded from their link.";
 
 mentalOptions[1] = "Since you are under 19, the best place to get help from mental health help is "
-                +  " <a href = \"http://www.vch.ca/Locations-Services/result?res_id=1116\">"
+                +  " <a target=\"_blank\" href = \"http://www.vch.ca/Locations-Services/result?res_id=1116\">"
                 + " Richmond Child and Adolescent Mental Health Center </a>. They can provide "
                 + " assesments and treatment for mental health problems. Do note that appointments with "
                 + " psychiatrists require a refferal from a health professional. The refferal form can be "
@@ -92,9 +91,9 @@ mentalOptions[1] = "Since you are under 19, the best place to get help from ment
 
 const diagnoseS = "In order to get formal psychiatric help,"          //If they don't have an offical diagnosis yet
                     + " you need a refferal. The easiest way"
-                    + " to get a refferal is to speak with <a href = \"https://www.ratemds.com/facilities/bc/richmond/\">a general"
+                    + " to get a refferal is to speak with <a target=\"_blank\" href = \"https://www.ratemds.com/facilities/bc/richmond/\">a general"
                     + " practitioner or family doctor</a>, such as ones at"
-                    + " <a href = \"https://stevestonmedicalgroup.wordpress.com/\">Steveston<\a> or <a href = \"http://www.terranovamedical.ca/\"> Terra Nova</a>. Many doctors can provide"
+                    + " <a target=\"_blank\" href = \"https://stevestonmedicalgroup.wordpress.com/\">Steveston<\a> or <a target=\"_blank\" href = \"http://www.terranovamedical.ca/\"> Terra Nova</a>. Many doctors can provide"
                     + " a diagnosis after a simple phone appointment."; 
 
 const jobS = "If you wish to help find a job, the best place to go is WorkBC."          //If they need help finding a job
@@ -108,12 +107,12 @@ const housingOptions = [];
 
 
 //over 65
-housingOptions[0] = "The BC Housing <a href = \"https://www.bchousing.org/housing-assistance/housing-with-support/seniors-supportive-housing\">"
+housingOptions[0] = "The BC Housing <a target=\"_blank\" href = \"https://www.bchousing.org/housing-assistance/housing-with-support/seniors-supportive-housing\">"
                     + "BC Senior Supprortive Housing</a> would be your best option. It is a program that helps senior citizens"
                     + " of BC access housing with supports. Follow instructions at the site to apply.";
 
 //incapable of living independantly
-housingOptions[1] = "The BC Housing <a href = \"https://www.bchousing.org/housing-assistance/housing-with-support/supportive-housing\"> "
+housingOptions[1] = "The BC Housing <a target=\"_blank\" href = \"https://www.bchousing.org/housing-assistance/housing-with-support/supportive-housing\"> "
                     + " Supportive Housing Program </a> would be the best option for you."
                     + " It helps people at risk of homelessness who have challenges that make it difficult to live independantly."
                     + " Supportive housing provides a range of on-site, non-clinical supports, such as life-skills training, "
@@ -122,14 +121,14 @@ housingOptions[1] = "The BC Housing <a href = \"https://www.bchousing.org/housin
 
 //capable of independant living, low enough income for subsidized housing
 housingOptions[2] = "The best option for you is BC Housing's "
-                    + "<a href = \"https://www.bchousing.org/housing-assistance/rental-housing/subsidized-housing\"> "
+                    + "<a target=\"_blank\" href = \"https://www.bchousing.org/housing-assistance/rental-housing/subsidized-housing\"> "
                     + " Subsidized Housing </a>, a program meant to find housing for low-income residents who are capable of living independantly."
                     + " Subsidized housing is long-term housing for people who permanently reside in British Columbia. "
                     + " Rental fees are 30% of gross income. Follow instructions in the link to apply.";
 
 //capable of independant living, too rich for subsidized housing
 housingOptions[3] = "The best option for you would be BC Housing's "
-                    + " <a href =\"https://www.bchousing.org/housing-assistance/rental-housing/affordable-rental-housing\"> Affordable Rental Housing </a>."
+                    + " <a target=\"_blank\" href =\"https://www.bchousing.org/housing-assistance/rental-housing/affordable-rental-housing\"> Affordable Rental Housing </a>."
                     + " This is a program for residents who are capable of living independantly but make too much to qualify for subsidized housing. "
                     + " To apply, follow instructions in the link.";
 
