@@ -54,11 +54,17 @@
         <label><input type = "radio" name = "job" id = "diagnosedYes" class = "help">Yes</label>
         <label><input type = "radio" name = "job" id = "diagnosedNo">No</label><br>
 
-        <!--
-        <h2>Would you like help finding a place to stay?</h2>
-        <label><input type = "radio" name = "home" id = "homeYes" class = "help">Yes</label>
-        <label><input type = "radio" name = "home" id = "homeNo">No</label><br>
-        -->
+        
+        <h2>Would you like help with housing, either finding a home or affording your current one?</h2>
+        <label><input type = "radio" name = "home" id = "homeYes" class = "Appear help">Yes</label>
+        <label><input type = "radio" name = "home" id = "homeNo" class = "Disappear">No</label><br>
+
+        <div id = "proper housing" class = "hidden followup">
+            <h2>Please check any that apply to you.</h2>
+            <label><input type = "checkbox" id = "diagnosedYes">I am over 65 or incapable of independant living.</label><br>
+            <label><input type = "checkbox" id = "diagnosedNo" class = "help">I have a home but am in danger of eviction.</label><br>
+            <label><input type = "checkbox" id = "diagnosedNo" class = "help">I make less than $58,000 a year.</label>I make less than $58, 000 a year.<br>
+        </div>
     </div>
     <br>
     <button id = "getSuggestions" onclick="getSuggestions()">Submit</button>

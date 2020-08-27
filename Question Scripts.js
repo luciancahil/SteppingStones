@@ -98,9 +98,9 @@ const diagnoseS = "In order to get formal psychiatric help,"          //If they 
 
 const jobS = "If you wish to help find a job, the best place to go is WorkBC."          //If they need help finding a job
                + " To get startted, call either the Granville branch (778-732- 1529)"
-               " or the ironwood branch(778-732-4718). They will ask for basic information in the intial call."
-               " You will then be matched with a counsellor who can help you with resume building,"
-               " skills building, interviewing skills, and applying for wage subsidies.";         
+               + " or the ironwood branch(778-732-4718). They will ask for basic information in the intial call."
+               + " You will then be matched with a counsellor who can help you with resume building,"
+                + " skills building, interviewing skills, and applying for wage subsidies.";         
 const homeS = "You need help finding a home";       //If they need help finding a home
 
 
