@@ -105,10 +105,11 @@ const jobS = "If you wish to help find a job, the best place to go is WorkBC."  
                 
 const housingOptions = [];
 
-//at risk of eviction
-housingOptions[0] = "You need the Homeless Prevention Program ";
 
-//incapable of independant living
+//over 65
+housingOptions[0] = "Seniour supportive Housing";
+
+//incapable
 housingOptions[1] = "Supportive Housing";
 
 //capable of independant living
@@ -174,7 +175,7 @@ function findmentalSelection(){
 }
 
 function findHousingSolution(){
-    if(document.getElementById("eviction").checked){
+    if(document.getElementById("young").checked){
         suggestionsList[7] = housingOptions[0];
         return;
     }
