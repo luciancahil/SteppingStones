@@ -101,10 +101,24 @@ const jobS = "If you wish to help find a job, the best place to go is WorkBC."  
                + " or the ironwood branch(778-732-4718). They will ask for basic information in the intial call."
                + " You will then be matched with a counsellor who can help you with resume building,"
                 + " skills building, interviewing skills, and applying for wage subsidies.";         
-const homeS = "You need help finding a home";       //If they need help finding a home
+
+                
+const housingOptions = [];
+
+//at risk of eviction
+housingOptions[0] = "You need the Homeless Prevention Program ";
+
+//incapable of independant living
+housingOptions[1] = "Supportive Housing";
+
+//capable of independant living
+housingOptions[2] = "Subsidized housing ";
+
+//capable of independant living, too rich for subsidized housing
+housingOptions[3] = "Affordable Rental Housing";
 
 
-//[3] is the addiction option, and [4] is the mental option
+//[3] is the addiction option, and [4] is the mental option and [7] is the housing suggestion
 suggestionsList[0] = idS; suggestionsList[1] = firstIDS; suggestionsList[2] = welfareS; suggestionsList[5] = diagnoseS; suggestionsList[6] = jobS; //suggestionsList[7] = homeS;
 const suggestionOutput = document.getElementById("suggestions");     //The HTML element that will ouptut suggestions
 
@@ -124,6 +138,7 @@ function getSuggestions(){
     
     findAddictionSelection();
     findmentalSelection();
+    findHousingSolution();
 
     for(let i = 0; i < suggestionsList.length; i++){
         if(helpSelection[i].checked){
@@ -156,6 +171,26 @@ function findmentalSelection(){
     }else{
         suggestionsList[4] = mentalOptions[1];
     }
+}
+
+function findHousingSolution(){
+    if(document.getElementById("eviction").checked){
+        suggestionsList[7] = housingOptions[0];
+        return;
+    }
+
+    if(document.getElementById("incapable").checked){
+        suggestionsList[7] = housingOptions[1]
+        return;
+    }
+
+    if(document.getElementById("under58").checked){
+        suggestionsList[7] = housingOptions[2]
+        return;
+    }
+
+    //independant, too rich
+    suggestionsList[7] = housingOptions[3];
 }
 
 function addsuggestion(string, num){
