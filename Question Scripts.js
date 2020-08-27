@@ -30,8 +30,9 @@ function makeInvsible(){
 //Stores the Strings that make up the suggestions
 var suggestionsList = [];                             //stores the suggestions
 
-const idS = "If you want help with getting ID, the best place to go for help is Chimo."                 //if they need help with id
-            + " They are on the first floor of Richmond Caring place, located at 7000 Minoru Boulevard."
+const idS = "If you want help with getting ID, the best place to go for help is "                 //if they need help with id
+            + " <a href = \"http://www.chimoservices.com/\">"
+            + " Chimo.</a> They are on the first floor of Richmond Caring place, located at 7000 Minoru Boulevard."
             + " Open from 9 am to 4:30 pm on weekdays. You will need to bring at least one piece of ID";
 
 const firstIDS = "However, since you don't have the first piece of ID, you will need to "   //if they need help getting their first piece of id
@@ -45,8 +46,8 @@ const firstIDS = "However, since you don't have the first piece of ID, you will 
                 + "<a href = \"https://salvationarmyrichmond.org/?page_id=73\">Richmond House Emergency Shelter</a> to pick up.";    
                 
                 
-const welfareS = "If you want help with getting ID, the best place to go for help is Chimo."                                                    //if they need help applying for welfare
-                + " They are on the first floor of Richmond Caring place, located at 7000 Minoru Boulevard."
+const welfareS = "If you want help with getting ID, the best place to go for help is <a href = \"http://www.chimoservices.com/\">"                                                    //if they need help applying for welfare
+                + " Chimo.</a> They are on the first floor of Richmond Caring place, located at 7000 Minoru Boulevard."
                 + " Open from 9 am to 4:30 pm on weekdays. You will need to bring ID";     
     
 
@@ -93,12 +94,12 @@ const diagnoseS = "In order to get formal psychiatric help,"          //If they 
                     + " you need a refferal. The easiest way"
                     + " to get a refferal is to speak with <a href = \"https://www.ratemds.com/facilities/bc/richmond/\">a general"
                     + " practitioner or family doctor</a>, such as ones at"
-                    + " <a href = \"https://stevestonmedicalgroup.wordpress.com/\">Steveston<\a> or <a href = \"http://www.terranovamedical.ca/\"> terra nova</a>. Many doctors can provide"
+                    + " <a href = \"https://stevestonmedicalgroup.wordpress.com/\">Steveston<\a> or <a href = \"http://www.terranovamedical.ca/\"> Terra Nova</a>. Many doctors can provide"
                     + " a diagnosis after a simple phone appointment."; 
 
 const jobS = "If you wish to help find a job, the best place to go is WorkBC."          //If they need help finding a job
-               + " To get startted, call either the Granville branch (778-732- 1529)"
-               + " or the ironwood branch(778-732-4718). They will ask for basic information in the intial call."
+               + " To get startted, call either the Granville Branch (778-732- 1529) or the Ironwood Branch(778-732-4718)."
+               + " It is recommended you call the one you can physically go to easier. They will ask for basic information in the intial call."
                + " You will then be matched with a counsellor who can help you with resume building,"
                 + " skills building, interviewing skills, and applying for wage subsidies.";         
 
@@ -107,7 +108,7 @@ const housingOptions = [];
 
 
 //over 65
-housingOptions[0] = "The BC Housing <a href = \"https://www.bchousing.org/housing-assistance/housing-with-support/seniors-supportive-housing\">
+housingOptions[0] = "The BC Housing <a href = \"https://www.bchousing.org/housing-assistance/housing-with-support/seniors-supportive-housing\">"
                     + "BC Senior Supprortive Housing</a> would be your best option. It is a program that helps senior citizens"
                     + " of BC access housing with supports. Follow instructions at the site to apply.";
 
@@ -128,7 +129,7 @@ housingOptions[2] = "The best option for you is BC Housing's "
 
 //capable of independant living, too rich for subsidized housing
 housingOptions[3] = "The best option for you would be BC Housing's "
-                    + " <a href =\"https://www.bchousing.org/housing-assistance/rental-housing/affordable-rental-housing\" Affordable Rental Housing </a>."
+                    + " <a href =\"https://www.bchousing.org/housing-assistance/rental-housing/affordable-rental-housing\"> Affordable Rental Housing </a>."
                     + " This is a program for residents who are capable of living independantly but make too much to qualify for subsidized housing. "
                     + " To apply, follow instructions in the link.";
 
@@ -207,3 +208,10 @@ function findHousingSolution(){
 function addsuggestion(string, num){
     suggestions += "<p>" + num + ". " + string + "</p>";
 }
+
+
+//bug list
+
+/*
+Set a checked for One ID helper
+*/
