@@ -70,13 +70,28 @@ addictionOptions[2] =   "Since you are a minor, the best place for you to find" 
                     + " and a specialist will help find you find a suitable professional.";
 
 
-const addictionS = "You need addictions help";      //if they need addictions help
-const mentalS = "You need mentla help";             //if they need mental help
 
+
+var mentalOptions = [];
+
+//Over 19
+mentalOptions[0] = "Since you are over 18, the best place is to go is the "
+                    + " <a href =\"http://www.vch.ca/Locations-Services/result?res_id=1062\">"
+                    + "Richmond Adult Mental Health Team </a>. They can provide community based assessment" 
+                    + " and treatment, as well as case management, outreach and rehabilitation programs."
+                    + " Do note that they require a refferal form to be filled out by a"
+                    + " midwife, physician or nurse practitioner. The form can be downloaded from their link.";
+
+mentalOptions[1] = "Since you are under 19, the best place to get help from mental health help is "
+                +  " <a href = \"http://www.vch.ca/Locations-Services/result?res_id=1116\">"
+                + " Richmond Child and Adolescent Mental Health Center </a>. They can provide "
+                + " assesments and treatment for mental health problems. Do note that appointments with "
+                + " psychiatrists require a refferal from a health professional. The refferal form can be "
+                + " downloaded from the link."
 
 const diagnoseS = "In order to get formal psychiatric help,"          //If they don't have an offical diagnosis yet
-                    + " you need a formal diagnosis. The easiest way"
-                    + " to get a diagnosis is to speak with <a href = \"https://www.ratemds.com/facilities/bc/richmond/\">a general"
+                    + " you need a refferal. The easiest way"
+                    + " to get a refferal is to speak with <a href = \"https://www.ratemds.com/facilities/bc/richmond/\">a general"
                     + " practitioner or family doctor</a>, such as ones at"
                     + " <a href = \"https://stevestonmedicalgroup.wordpress.com/\">Steveston<\a> or <a href = \"http://www.terranovamedical.ca/\"> terra nova</a>. Many doctors can provide"
                     + " a diagnosis after a simple phone appointment."; 
@@ -89,8 +104,8 @@ const jobS = "If you wish to help find a job, the best place to go is WorkBC."  
 const homeS = "You need help finding a home";       //If they need help finding a home
 
 
-
-suggestionsList[0] = idS; suggestionsList[1] = firstIDS; suggestionsList[2] = welfareS; suggestionsList[4] = mentalS; suggestionsList[5] = diagnoseS; suggestionsList[6] = jobS; //suggestionsList[7] = homeS;
+//[3] is the addiction option, and [4] is the mental option
+suggestionsList[0] = idS; suggestionsList[1] = firstIDS; suggestionsList[2] = welfareS; suggestionsList[5] = diagnoseS; suggestionsList[6] = jobS; //suggestionsList[7] = homeS;
 const suggestionOutput = document.getElementById("suggestions");     //The HTML element that will ouptut suggestions
 
 
@@ -108,6 +123,7 @@ function getSuggestions(){
 
     
     findAddictionSelection();
+    findmentalSelection();
 
     for(let i = 0; i < suggestionsList.length; i++){
         if(helpSelection[i].checked){
@@ -118,6 +134,8 @@ function getSuggestions(){
     suggestionOutput.innerHTML = suggestions;
 }
 
+
+//this method finds out which addiction selection is appropriate based on context
 function findAddictionSelection(){
     let opiodRadio = document.getElementById("opiodYes");
 
@@ -130,8 +148,14 @@ function findAddictionSelection(){
     }else{
         suggestionsList[3] = addictionOptions[2];
     }
+}
 
-``
+function findmentalSelection(){
+    if(above19){
+        suggestionsList[4] = mentalOptions[0];
+    }else{
+        suggestionsList[4] = mentalOptions[1];
+    }
 }
 
 function addsuggestion(string, num){
