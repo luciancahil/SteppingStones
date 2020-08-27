@@ -107,18 +107,32 @@ const housingOptions = [];
 
 
 //over 65
-housingOptions[0] = "Seniour supportive Housing";
+housingOptions[0] = "The BC Housing <a href = \"https://www.bchousing.org/housing-assistance/housing-with-support/seniors-supportive-housing\">
+                    + "BC Senior Supprortive Housing</a> would be your best option. It is a program that helps senior citizens"
+                    + " of BC access housing with supports. Follow instructions at the site to apply.";
 
-//incapable
-housingOptions[1] = "Supportive Housing";
+//incapable of living independantly
+housingOptions[1] = "The BC Housing <a href = \"https://www.bchousing.org/housing-assistance/housing-with-support/supportive-housing\"> "
+                    + " Supportive Housing Program </a> would be the best option for you."
+                    + " It helps people at risk of homelessness who have challenges that make it difficult to live independantly."
+                    + " Supportive housing provides a range of on-site, non-clinical supports, such as life-skills training, "
+                    + " and connections to primary health care, mental health or substance use services. "
+                    + " To apply, complete the application form at the link, and follow instructions on the site to submit the form.";
 
-//capable of independant living
-housingOptions[2] = "Subsidized housing ";
+//capable of independant living, low enough income for subsidized housing
+housingOptions[2] = "The best option for you is BC Housing's "
+                    + "<a href = \"https://www.bchousing.org/housing-assistance/rental-housing/subsidized-housing\"> "
+                    + " Subsidized Housing </a>, a program meant to find housing for low-income residents who are capable of living independantly."
+                    + " Subsidized housing is long-term housing for people who permanently reside in British Columbia. "
+                    + " Rental fees are 30% of gross income. Follow instructions in the link to apply.";
 
 //capable of independant living, too rich for subsidized housing
-housingOptions[3] = "Affordable Rental Housing";
+housingOptions[3] = "The best option for you would be BC Housing's "
+                    + " <a href =\"https://www.bchousing.org/housing-assistance/rental-housing/affordable-rental-housing\" Affordable Rental Housing </a>."
+                    + " This is a program for residents who are capable of living independantly but make too much to qualify for subsidized housing. "
+                    + " To apply, follow instructions in the link.";
 
-
+//Array that stores all possible suggestions
 //[3] is the addiction option, and [4] is the mental option and [7] is the housing suggestion
 suggestionsList[0] = idS; suggestionsList[1] = firstIDS; suggestionsList[2] = welfareS; suggestionsList[5] = diagnoseS; suggestionsList[6] = jobS; //suggestionsList[7] = homeS;
 const suggestionOutput = document.getElementById("suggestions");     //The HTML element that will ouptut suggestions
@@ -174,6 +188,11 @@ function findmentalSelection(){
     }
 }
 
+
+//If the first checkbox is checked, then the first suggestion in the list is given, regardless of the following boxes. 
+//Same for the second and the third buttons.
+//If no butttons are checked, the final option is recommended.
+
 function findHousingSolution(){
     let index = 0;
     let housingChecks = document.getElementsByClassName("housing");     //all the checkboxes in the housing followup
@@ -182,12 +201,9 @@ function findHousingSolution(){
         index++;
     }
 
-    //independant, too rich
-    suggestionsList[7] = housingOptions[index];
+    suggestionsList[7] = "For housing, " + housingOptions[index];
 }
 
 function addsuggestion(string, num){
     suggestions += "<p>" + num + ". " + string + "</p>";
 }
-
-//TODO add better suggestions, and then add a download option
