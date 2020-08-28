@@ -14,3 +14,7 @@
     border: 1px dashed #ccc;
     border-radius: 10px;
 }
+
+*{
+    background-color: pink;
+}
